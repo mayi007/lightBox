@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lightbox插件开发</title>
+	<link rel="stylesheet" type="text/css" href="css/lightbox.css">
+	<script type="text/javascript" src='js/jquery.js'></script>
+	<script type="text/javascript" src='js/lightbox.js'></script>
+</head>
+<body>
+	
+</body>
+<script>
+	$(function(){
+		// var arr=[
+		// {src:'1.html',id:1,caption:1.1},
+		// {src:'2.html',id:2,caption:2.1},
+		// {src:'3.html',id:3,caption:3.1}
+		// ];
+
+		// $(arr).each(function(index, el){
+		// 	console.log(this.src); //3个值
+		// }); 
+		
+		var minSize = { width: 800, height: 600 };
+
+		$(window).resize( minSize, function(event){
+		    var min = event.data;
+		    alert(min.height);//600
+		    var $dom = $(this);
+		    if( $dom.width() < min.width ){
+		        $("body").append("<br>窗口宽度不要小于" + min.width );
+		    }else if( $dom.height() < min.height ){
+		        $("body").append("<br>窗口高度不要小于" + min.height);
+		    }
+		} ); 
+	});
+</script>
+</html>
